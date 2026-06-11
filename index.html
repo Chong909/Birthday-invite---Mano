@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mano's 90th Birthday Invitation</title>
+  <style>
+    /* Elegant Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      /* Deep rich maroon background matching image 1000341011.jpg */
+      background: radial-gradient(circle, #500a12 0%, #2c0307 100%);
+      color: #f5f0e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Festive Balloon Graphics using SVG Background Elements */
+    .bg-decorations {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Gold glitter/confetti effect */
+    .bg-decorations::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.3) 1px, transparent 1px),
+        radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px);
+      background-size: 40px 40px, 60px 60px;
+      background-position: 0 0, 20px 30px;
+      opacity: 0.6;
+    }
+
+    /* Main Invitation Card */
+    .card {
+      background: rgba(44, 3, 7, 0.85);
+      max-width: 550px;
+      width: 90%;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border-radius: 20px;
+      border: 2px solid #d4af37; /* Elegant Gold Border */
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.2);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Floating Portrait Box in the Corner */
+    .portrait-box {
+      position: absolute;
+      top: -25px;
+      right: -25px;
+      width: 110px;
+      height: 110px;
+      border-radius: 15px;
+      border: 3px solid #d4af37;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      overflow: hidden;
+      background: #2c0307;
+    }
+
+    .portrait-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      color: #d4af37;
+      font-size: 3rem;
+      margin: 10px 0 5px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      color: #f5f0e1;
+    }
+
+    .guest-of-honor {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d4af37;
+      margin: 15px 0 5px 0;
+      letter-spacing: 1px;
+    }
+
+    .nickname {
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: #f5f0e1;
+    }
+
+    /* Details Section */
+    .details-box {
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 20px 0;
+      margin: 25px 0;
+    }
+
+    .details-item {
+      margin: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .details-item strong {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    /* RSVP Interactive Form Container */
+    .rsvp-container {
+      background: #fdfaf2; /* Soft Cream card for form inputs */
+      color: #2c0307;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    /* Custom Attendance Selection Buttons */
+    .status-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .status-btn {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .status-btn.yes {
+      color: #2e7d32;
+      border-color: #2e7d32;
+    }
+
+    .status-btn.yes.active {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .status-btn.no {
+      color: #c62828;
+      border-color: #c62828;
+    }
+
+    .status-btn.no.active {
+      background: #c62828;
+      color: white;
+    }
+
+    /* Text Inputs and Dropdowns */
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+
+    /* Elegant Submit Button */
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+      border: 1px solid #aa771c;
+      color: #2c0307;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Footer / Host Details */
+    .footer-rsvp {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      color: #d4af37;
+      font-weight: 400;
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 600px) {
+      .card {
+        margin: 60px auto 20px auto;
+        padding: 30px 20px;
+      }
+      .portrait-box {
+        top: -45px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+      h1 {
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative Balloon Background elements -->
+  <div class="bg-decorations"></div>
+
+  <div class="card">
+    
+    <!-- Top Corner Portrait Box containing the celebrant's picture -->
+    <!-- Swap the 'src' string out with your hosted image link once uploaded -->
+    <div class="portrait-box">
+      <img src="1000341011.jpg" alt="Manormoney Munsamy">
+    </div>
+
+    <h1>You're Invited!</h1>
+    <div class="subtitle">to celebrate the</div>
+    
+    <div class="subtitle" style="color: #d4af37; font-size: 1.4rem;">90th Birthday Party</div>
+    <div class="subtitle">of</div>
+    
+    <div class="guest-of-honor">MANORMONEY MUNSAMY</div>
+    <div class="nickname">(MANO)</div>
+
+    <!-- Details block matching picture text exactly -->
+    <div class="details-box">
+      <div class="details-item"><strong>Venue:</strong> Marigod Banquet Hall, Merebank</div>
+      <div class="details-item"><strong>Date:</strong> 19th December</div>
+      <div class="details-item"><strong>Time:</strong> 15h00</div>
+    </div>
+
+    <!-- RSVP Interactive Form Section linked to Formspree -->
+    <div class="rsvp-container">
+      <!-- Replace 'YOUR_FORMSPREE_ID_HERE' with your Formspree Endpoint key -->
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
+        
+        <label>Will you attend?</label>
+        <div class="status-buttons">
+          <button type="button" class="status-btn yes" onclick="setAttendance('Yes')">✓ Yes, I'll Attend</button>
+          <button type="button" class="status-btn no" onclick="setAttendance('No')">✗ No, Can't Make It</button>
+        </div>
+
+        <!-- Hidden Input that carries the Button Selection value into the form submission email -->
+        <input type="hidden" name="Attendance" id="attendance-value" required>
+
+        <label for="name">Your Full Name</label>
+        <input type="text" id="name" name="Guest Name" placeholder="Enter your first and last name" required>
+
+        <label for="attendees">Number of Attendees (including yourself)</label>
+        <select id="attendees" name="Total Guests">
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5+">5+ People</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Submit RSVP</button>
+      </form>
+    </div>
+
+    <div class="footer-rsvp">
+      RSVP: Joanna Govender 084 300 7610
+    </div>
+
+  </div>
+
+  <script>
+    // Interaction script handling custom toggle visual states
+    function setAttendance(choice) {
+      document.getElementById('attendance-value').value = choice;
+      
+      const yesBtn = document.querySelector('.status-btn.yes');
+      const noBtn = document.querySelector('.status-btn.no');
+      
+      if (choice === 'Yes') {
+        yesBtn.classList.add('active');
+        noBtn.classList.remove('active');
+      } else {
+        noBtn.classList.add('active');
+        yesBtn.classList.remove('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
