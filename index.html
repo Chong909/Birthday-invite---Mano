@@ -36,7 +36,7 @@
       position: relative;
     }
 
-    /* New Centralized, Bigger Square Frame layout */
+    /* Centralized, Bigger Square Frame layout */
     .portrait-box {
       width: 160px;
       height: 160px;
@@ -51,7 +51,8 @@
     .portrait-box img {
       width: 100%;
       height: 100%;
-      object-position: top center;
+      object-fit: cover;
+      object-position: top center; /* Fixes the crop issue by aligning to the top of the photo */
     }
 
     /* Text styling with safety shadows to combat light/dark mode visibility bugs */
@@ -237,6 +238,7 @@
       text-transform: uppercase;
       color: #ffffff;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      line-height: 1.6; /* Adds clear vertical breathing room for the multi-line contact */
     }
 
     @media (max-width: 500px) {
@@ -257,7 +259,7 @@
 
   <div class="invitation-container">
     
-    <!-- Centralized larger square frame -->
+    <!-- Centralized portrait frame -->
     <div class="portrait-box">
       <img src="IMG-20260611-WA0019.jpg" alt="Manormoney Munsamy">
     </div>
@@ -302,8 +304,9 @@
       </form>
     </div>
 
+    <!-- Cleaned up footer with number on its own centered line -->
     <div class="footer-contact">
-      RSVP: Joanna Govender 084 300 7610
+      RSVP: Joanna Govender<br>084 300 7610
     </div>
 
   </div>
