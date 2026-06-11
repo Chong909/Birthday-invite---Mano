@@ -16,7 +16,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      /* Updated with your new glitter background filename */
+      /* Background setup */
       background: url('1781173637783.png') no-repeat center top;
       background-size: cover;
       background-attachment: scroll;
@@ -31,21 +31,21 @@
       max-width: 550px;
       width: 100%;
       margin: 0 auto;
-      padding: 60px 25px 40px 25px;
+      padding: 40px 25px;
       text-align: center;
       position: relative;
     }
 
+    /* New Centralized, Bigger Square Frame layout */
     .portrait-box {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      border: 1.5px solid #ffffff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 25px auto;
+      border-radius: 12px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       overflow: hidden;
+      display: block;
     }
 
     .portrait-box img {
@@ -54,90 +54,100 @@
       object-fit: cover;
     }
 
+    /* Text styling with safety shadows to combat light/dark mode visibility bugs */
     .join-us {
       font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       letter-spacing: 4px;
       color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 10px;
-      margin-top: 20px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     }
 
     h1 {
       font-family: 'Cinzel', serif;
-      font-weight: 400;
+      font-weight: 600;
       color: #ffffff;
       font-size: 2.8rem;
       line-height: 1.2;
-      margin: 0 0 40px 0;
+      margin: 0 0 35px 0;
       letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
     }
 
     .celebrating {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.9rem;
+      font-weight: 600;
       letter-spacing: 5px;
-      color: #4a122c;
+      color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 5px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     }
 
     .guest-of-honor {
       font-family: 'Pinyon Script', cursive;
-      font-size: 3.8rem;
-      color: #4a122c;
-      margin: 0px 0 5px 0;
-      line-height: 1;
+      font-size: 4rem;
+      color: #ffffff;
+      margin: 5px 0;
+      line-height: 1.1;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6), 0px 0px 12px rgba(74, 18, 44, 0.9);
     }
 
     .age-milestone {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.9rem;
+      font-weight: 600;
       letter-spacing: 4px;
-      color: #4a122c;
+      color: #ffffff;
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     }
 
     .details-section {
       font-family: 'Montserrat', sans-serif;
       margin: 30px 0;
+      background: rgba(74, 18, 44, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
     }
 
     .details-item {
       margin: 12px 0;
-      font-size: 0.95rem;
-      font-weight: 400;
+      font-size: 1rem;
+      font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #4a122c;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     }
 
     .details-item strong {
       font-weight: 700;
+      color: #ffffff;
     }
 
-    /* RSVP Section customized to blend cleanly directly into the background colors */
+    /* RSVP form box adjustments for seamless integration */
     .rsvp-form-box {
-      margin-top: 40px;
+      margin-top: 35px;
       padding: 25px 20px;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 1);
       text-align: left;
-      box-shadow: 0 8px 20px rgba(74, 18, 44, 0.08);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
     label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #4a122c;
@@ -152,9 +162,9 @@
     .status-btn {
       flex: 1;
       padding: 12px;
-      border: 1px solid rgba(74, 18, 44, 0.2);
+      border: 1.5px solid rgba(74, 18, 44, 0.3);
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
+      background: #ffffff;
       cursor: pointer;
       font-weight: 700;
       font-size: 0.85rem;
@@ -190,11 +200,11 @@
       width: 100%;
       padding: 12px;
       margin-bottom: 20px;
-      border: 1px solid rgba(74, 18, 44, 0.2);
+      border: 1px solid rgba(74, 18, 44, 0.3);
       border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.95rem;
-      background: rgba(255, 255, 255, 0.85);
+      background: #ffffff;
       color: #4a122c;
     }
 
@@ -210,7 +220,7 @@
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 2px;
-      box-shadow: 0 4px 12px rgba(74, 18, 44, 0.2);
+      box-shadow: 0 4px 12px rgba(74, 18, 44, 0.3);
       transition: all 0.2s;
     }
 
@@ -221,25 +231,24 @@
 
     .footer-contact {
       margin-top: 40px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #4a122c;
+      color: #ffffff;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     }
 
     @media (max-width: 500px) {
       h1 {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
       }
       .guest-of-honor {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
       }
       .portrait-box {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin: 0 auto 20px auto;
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
@@ -248,6 +257,7 @@
 
   <div class="invitation-container">
     
+    <!-- Centralized larger square frame -->
     <div class="portrait-box">
       <img src="IMG-20260611-WA0019.jpg" alt="Manormoney Munsamy">
     </div>
