@@ -45,14 +45,17 @@
       border: 3px solid #ffffff;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       overflow: hidden;
-      display: block;
+      display: block; /* Stripped out flex properties to stop image compression bugs */
+      position: relative;
     }
 
     .portrait-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Forces the image to zoom and fill the entire square */
-      object-position: center 15%; /* Perfectly positions the frame so her head isn't cropped */
+      min-width: 100%; /* Guarantees the image won't leave empty space on the left or right */
+      min-height: 100%;
+      object-fit: cover; /* Forces the crop zoom over the edges */
+      object-position: center 15%; /* Perfectly frames her head and shoulders */
     }
 
     /* Text styling with safety shadows to combat light/dark mode visibility bugs */
