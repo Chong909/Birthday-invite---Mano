@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mano's 90th Birthday Invitation</title>
   <style>
-    /* Elegant Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+    /* Importing fonts to match the reference style precisely */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=Montserrat:wght@300;400;500;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -16,64 +16,36 @@
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      background: radial-gradient(circle, #500a12 0%, #2c0307 100%);
-      color: #f5f0e1;
+      /* Updated with your new glitter background filename */
+      background: url('1781173637783.png') no-repeat center top;
+      background-size: cover;
+      background-attachment: scroll;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
     }
 
-    .bg-decorations {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .bg-decorations::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(rgba(212, 175, 55, 0.3) 1px, transparent 1px),
-        radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px);
-      background-size: 40px 40px, 60px 60px;
-      background-position: 0 0, 20px 30px;
-      opacity: 0.6;
-    }
-
-    .card {
-      background: rgba(44, 3, 7, 0.85);
+    /* Outer container mimicking the clean layout of the reference card image */
+    .invitation-container {
       max-width: 550px;
-      width: 90%;
-      margin: 40px auto;
-      padding: 40px 30px;
-      border-radius: 20px;
-      border: 2px solid #d4af37;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.2);
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 25px 40px 25px;
       text-align: center;
       position: relative;
-      z-index: 2;
     }
 
     .portrait-box {
       position: absolute;
-      top: -25px;
-      right: -25px;
-      width: 110px;
-      height: 110px;
-      border-radius: 15px;
-      border: 3px solid #d4af37;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      top: 20px;
+      right: 20px;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       overflow: hidden;
-      background: #2c0307;
     }
 
     .portrait-box img {
@@ -82,209 +54,232 @@
       object-fit: cover;
     }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      color: #d4af37;
-      font-size: 3rem;
-      margin: 10px 0 5px 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    .join-us {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 20px;
     }
 
-    .subtitle {
+    h1 {
       font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin: 0 0 40px 0;
       letter-spacing: 2px;
-      margin-bottom: 25px;
-      color: #f5f0e1;
+    }
+
+    .celebrating {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      color: #4a122c;
+      text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
     .guest-of-honor {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #d4af37;
-      margin: 15px 0 5px 0;
-      letter-spacing: 1px;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 3.8rem;
+      color: #4a122c;
+      margin: 0px 0 5px 0;
+      line-height: 1;
     }
 
-    .nickname {
-      font-size: 1.2rem;
-      font-weight: 300;
-      font-style: italic;
-      margin-bottom: 30px;
-      color: #f5f0e1;
+    .age-milestone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: #4a122c;
+      text-transform: uppercase;
+      margin-bottom: 40px;
     }
 
-    .details-box {
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 20px 0;
-      margin: 25px 0;
+    .details-section {
+      font-family: 'Montserrat', sans-serif;
+      margin: 30px 0;
     }
 
     .details-item {
       margin: 12px 0;
-      font-size: 1.1rem;
-      font-weight: 300;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a122c;
     }
 
     .details-item strong {
-      color: #d4af37;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .rsvp-container {
-      background: #fdfaf2;
-      color: #2c0307;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    /* RSVP Section customized to blend cleanly directly into the background colors */
+    .rsvp-form-box {
+      margin-top: 40px;
+      padding: 25px 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       text-align: left;
+      box-shadow: 0 8px 20px rgba(74, 18, 44, 0.08);
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a122c;
     }
 
     .status-buttons {
       display: flex;
       gap: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .status-btn {
       flex: 1;
       padding: 12px;
-      border: 2px solid #ccc;
+      border: 1px solid rgba(74, 18, 44, 0.2);
       border-radius: 8px;
-      background: white;
+      background: rgba(255, 255, 255, 0.8);
       cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: all 0.3s ease;
       text-align: center;
     }
 
     .status-btn.yes {
-      color: #2e7d32;
-      border-color: #2e7d32;
+      color: #008a36;
     }
 
     .status-btn.yes.active {
-      background: #2e7d32;
+      background: #00cc52;
       color: white;
+      border-color: #00cc52;
+      box-shadow: 0 4px 12px rgba(0,204,82,0.3);
     }
 
     .status-btn.no {
-      color: #c62828;
-      border-color: #c62828;
+      color: #b81d24;
     }
 
     .status-btn.no.active {
-      background: #c62828;
+      background: #ff2e35;
       color: white;
-    }
-
-    label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 5px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      border-color: #ff2e35;
+      box-shadow: 0 4px 12px rgba(255,46,53,0.3);
     }
 
     input[type="text"], select {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(74, 18, 44, 0.2);
+      border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.85);
+      color: #4a122c;
     }
 
     .submit-btn {
       width: 100%;
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      border: 1px solid #aa771c;
-      color: #2c0307;
-      padding: 12px;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 6px;
+      background: #4a122c;
+      border: none;
+      color: #ffffff;
+      padding: 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-      transition: transform 0.2s;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 12px rgba(74, 18, 44, 0.2);
+      transition: all 0.2s;
     }
 
     .submit-btn:hover {
-      transform: translateY(-2px);
+      background: #63193b;
+      transform: translateY(-1px);
     }
 
-    .footer-rsvp {
-      margin-top: 25px;
-      font-size: 0.95rem;
-      color: #d4af37;
-      font-weight: 400;
+    .footer-contact {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #4a122c;
     }
 
-    @media (max-width: 600px) {
-      .card {
-        margin: 60px auto 20px auto;
-        padding: 30px 20px;
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+      .guest-of-honor {
+        font-size: 3.2rem;
       }
       .portrait-box {
-        top: -45px;
-        right: 50%;
-        transform: translateX(50%);
-      }
-      h1 {
-        margin-top: 50px;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 auto 20px auto;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="bg-decorations"></div>
-
-  <div class="card">
+  <div class="invitation-container">
     
-    <!-- References the verified image filename perfectly -->
     <div class="portrait-box">
       <img src="IMG-20260611-WA0019.jpg" alt="Manormoney Munsamy">
     </div>
 
-    <h1>You're Invited!</h1>
-    <div class="subtitle">to celebrate the</div>
+    <div class="join-us">Join us for a</div>
+    <h1>BIRTHDAY<br>PARTY</h1>
     
-    <div class="subtitle" style="color: #d4af37; font-size: 1.4rem;">90th Birthday Party</div>
-    <div class="subtitle">of</div>
-    
-    <div class="guest-of-honor">MANORMONEY MUNSAMY</div>
-    <div class="nickname">(MANO)</div>
+    <div class="celebrating">Celebrating</div>
+    <div class="guest-of-honor">Manormoney Munsamy</div>
+    <div class="age-milestone">As she turns ninety</div>
 
-    <div class="details-box">
+    <div class="details-section">
       <div class="details-item"><strong>Venue:</strong> Marigod Banquet Hall, Merebank</div>
       <div class="details-item"><strong>Date:</strong> 19th December</div>
       <div class="details-item"><strong>Time:</strong> 15h00</div>
     </div>
 
-    <div class="rsvp-container">
+    <div class="rsvp-form-box">
       <form onsubmit="sendToWhatsApp(event)">
         
         <label>Will you attend?</label>
         <div class="status-buttons">
-          <button type="button" class="status-btn yes" onclick="setAttendance('Yes')">✓ Yes, I'll Attend</button>
-          <button type="button" class="status-btn no" onclick="setAttendance('No')">✗ No, Can't Make It</button>
+          <button type="button" class="status-btn yes" onclick="setAttendance('Yes')">✓ Attend</button>
+          <button type="button" class="status-btn no" onclick="setAttendance('No')">✗ Decline</button>
         </div>
 
         <input type="hidden" id="attendance-value" required>
 
         <label for="name">Your Full Name</label>
-        <input type="text" id="name" placeholder="Enter your first and last name" required>
+        <input type="text" id="name" placeholder="Enter your name" required>
 
-        <label for="attendees">Number of Attendees (including yourself)</label>
+        <label for="attendees">Number of Attendees</label>
         <select id="attendees">
           <option value="1">1 Person</option>
           <option value="2">2 People</option>
@@ -297,7 +292,7 @@
       </form>
     </div>
 
-    <div class="footer-rsvp">
+    <div class="footer-contact">
       RSVP: Joanna Govender 084 300 7610
     </div>
 
@@ -322,7 +317,6 @@
     function sendToWhatsApp(event) {
       event.preventDefault(); 
 
-      // Your verified South African recipient endpoint link configuration
       const myPhoneNumber = "27843007610"; 
 
       const attendance = document.getElementById('attendance-value').value;
@@ -351,3 +345,4 @@
 
 </body>
 </html>
+
