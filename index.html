@@ -45,14 +45,16 @@
       border: 3px solid #ffffff;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       overflow: hidden;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #ffffff;
     }
 
     .portrait-box img {
-      width: 100%;
+      width: auto;
       height: 100%;
       object-fit: cover;
-      object-position: top center; /* Fixes the crop issue by aligning to the top of the photo */
     }
 
     /* Text styling with safety shadows to combat light/dark mode visibility bugs */
@@ -238,7 +240,7 @@
       text-transform: uppercase;
       color: #ffffff;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-      line-height: 1.6; /* Adds clear vertical breathing room for the multi-line contact */
+      line-height: 1.6;
     }
 
     @media (max-width: 500px) {
@@ -273,7 +275,7 @@
 
     <div class="details-section">
       <div class="details-item"><strong>Venue:</strong> Marigod Banquet Hall, Merebank</div>
-      <div class="details-item"><strong>Date:</strong> 19th December 2026 </div>
+      <div class="details-item"><strong>Date:</strong> 19th December 2026</div>
       <div class="details-item"><strong>Time:</strong> 15h00</div>
     </div>
 
@@ -304,7 +306,6 @@
       </form>
     </div>
 
-    <!-- Cleaned up footer with number on its own centered line -->
     <div class="footer-contact">
       RSVP: Joanna Govender<br>084 300 7610
     </div>
@@ -358,4 +359,3 @@
 
 </body>
 </html>
-
