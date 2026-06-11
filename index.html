@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mano's 90th Birthday Invitation</title>
+  <title>Ma's 90th Birthday Invitation</title>
   <style>
-    /* Google Fonts link updated with an explicit display swap parameter */
+    /* Google Fonts link explicitly loading the elegant Serif and Sans-Serif styles */
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;700&family=Pinyon+Script&display=swap');
 
     * {
@@ -16,8 +16,8 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      /* Appended a query string (?v=2) to break the aggressive mobile browser cache */
-      background: url('1781173637783.png?v=2') no-repeat center top;
+      /* Updated version token to force aggressive mobile browsers to pull fresh CSS changes */
+      background: url('1781173637783.png?v=3') no-repeat center top;
       background-size: cover;
       background-attachment: scroll;
       display: flex;
@@ -35,11 +35,11 @@
       text-align: center;
     }
 
-    /* Fixed Portrait Box layout */
+    /* Square Portrait Image Frame */
     .portrait-box {
       width: 160px;
       height: 160px;
-      margin: 0 auto 25px auto;
+      margin: 0 auto 30px auto;
       border-radius: 12px;
       border: 3px solid #ffffff !important;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
@@ -57,10 +57,10 @@
       object-position: center 15% !important;
     }
 
-    /* Typography fixes with forced color overrides */
+    /* Typography fixes with forced color overrides to beat mobile system light-mode overrides */
     .join-us {
       font-family: 'Cinzel', serif !important;
-      font-size: 0.95rem;
+      font-size: 1rem;
       letter-spacing: 4px;
       color: #ffffff !important;
       text-transform: uppercase;
@@ -74,25 +74,25 @@
       color: #ffffff !important;
       font-size: 2.6rem;
       line-height: 1.2;
-      margin: 0 0 30px 0;
+      margin: 0 0 25px 0;
       letter-spacing: 2px;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
     }
 
     .celebrating {
       font-family: 'Montserrat', sans-serif !important;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 5px;
       color: #ffffff !important;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     }
 
     .guest-of-honor {
       font-family: 'Pinyon Script', cursive !important;
-      font-size: 3.8rem;
+      font-size: 4.5rem;
       color: #ffffff !important;
       margin: 5px 0;
       line-height: 1.1;
@@ -100,17 +100,18 @@
     }
 
     .age-milestone {
-      font-family: 'Montserrat', sans-serif !important;
-      font-size: 0.9rem;
+      font-family: 'Cinzel', serif !important;
+      font-size: 1.1rem;
       font-weight: 600;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       color: #ffffff !important;
       text-transform: uppercase;
+      margin-top: 15px;
       margin-bottom: 35px;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     }
 
-    /* Details styling block */
+    /* Semitransparent background panel for readability */
     .details-section {
       margin: 30px 0;
       background: rgba(74, 18, 44, 0.45) !important;
@@ -136,7 +137,7 @@
       color: #ffffff !important;
     }
 
-    /* RSVP Container Panel */
+    /* Safe White RSVP Container Panel */
     .rsvp-form-box {
       margin-top: 35px;
       padding: 25px 20px;
@@ -255,7 +256,7 @@
         font-size: 2.2rem;
       }
       .guest-of-honor {
-        font-size: 3.4rem;
+        font-size: 3.8rem;
       }
       .portrait-box {
         width: 140px;
@@ -268,23 +269,25 @@
 
   <div class="invitation-container">
     
+    <!-- Image Profile Container Frame -->
     <div class="portrait-box">
-      <img src="IMG-20260611-WA0019.jpg" alt="Manormoney Munsamy">
+      <img src="IMG-20260611-WA0019.jpg" alt="Ma">
     </div>
 
-    <div class="join-us">Join us for a</div>
-    <h1>BIRTHDAY<br>PARTY</h1>
-    
-    <div class="celebrating">Celebrating</div>
-    <div class="guest-of-honor">Manormoney Munsamy</div>
-    <div class="age-milestone">As she turns ninety</div>
+    <!-- Updated layout wording requested by user -->
+    <div class="join-us">Join us in</div>
+    <h1>CELEBRATING MA</h1>
+    <div class="celebrating">As she turns</div>
+    <div class="guest-of-honor">90</div>
 
+    <!-- Details Section with Marigold spelling fix -->
     <div class="details-section">
-      <div class="details-item"><strong>Venue:</strong> Marigod Banquet Hall, Merebank</div>
+      <div class="details-item"><strong>Venue:</strong> Marigold Banquet Hall, Merebank</div>
       <div class="details-item"><strong>Date:</strong> 19th December 2026</div>
       <div class="details-item"><strong>Time:</strong> 15h00</div>
     </div>
 
+    <!-- RSVP Interactive Block -->
     <div class="rsvp-form-box">
       <form onsubmit="sendToWhatsApp(event)">
         
