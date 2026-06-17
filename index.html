@@ -51,7 +51,7 @@
     .text-content-layer {
       position: relative;
       z-index: 2;
-      padding: 185px 25px 35px 25px; /* Increased top padding significantly to push all text down */
+      padding: 185px 25px 35px 25px; 
       text-align: center;
     }
 
@@ -61,7 +61,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
-      /* Drops a micro shadow underneath the transparent text layer to aid contrast */
       filter: drop-shadow(1px 1px 1px rgba(74, 18, 44, 0.25)); 
     }
 
@@ -113,17 +112,43 @@
     }
 
     .details-item {
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 0.95rem;
       font-weight: 500;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: #4a122c !important;
+      line-height: 1.4;
     }
 
     .details-item strong {
       font-weight: 700;
       color: #4a122c !important;
+      display: block;
+      margin-bottom: 2px;
+      letter-spacing: 2px;
+    }
+
+    /* Styled Maps Link Button */
+    .maps-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #4a122c;
+      text-decoration: none;
+      border: 1px solid #b38728;
+      border-radius: 20px;
+      background: rgba(251, 245, 183, 0.3);
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+    }
+
+    .maps-link:hover {
+      background: #b38728;
+      color: #ffffff;
     }
 
     /* RSVP Layered Form sitting immediately below the main card context seamlessly */
@@ -237,7 +262,7 @@
 
     @media (max-width: 500px) {
       .text-content-layer {
-        padding-top: 155px; /* Ensures text stays beautifully cleared on mobile aspect ratios */
+        padding-top: 155px; 
         padding-left: 15px;
         padding-right: 15px;
       }
@@ -265,7 +290,12 @@
         <div class="guest-of-honor gold-text">90th birthday</div>
 
         <div class="details-section">
-          <div class="details-item"><strong>Venue:</strong> Durban</div>
+          <div class="details-item">
+            <strong>Venue:</strong> 
+            Christ Centre Ministries<br>
+            554 Tara Road, Durban, South Africa, 4052<br>
+            <a href="https://maps.app.goo.gl/BUdyyyXSkb5XtLqJ6?g_st=ac" target="_blank" class="maps-link">📍 View on Google Maps</a>
+          </div>
           <div class="details-item"><strong>Date:</strong> 19th December 2026</div>
           <div class="details-item"><strong>Time:</strong> 15h00</div>
         </div>
@@ -352,3 +382,4 @@
   </script>
 </body>
 </html>
+
