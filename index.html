@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ma's 90th Birthday Invitation</title>
   <style>
-    /* Google Fonts link explicitly loading the elegant Serif and Sans-Serif styles */
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;700&family=Pinyon+Script&display=swap');
 
     * {
@@ -16,8 +15,8 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      /* Updated version token to force aggressive mobile browsers to pull fresh CSS changes */
-      background: url('1781173637783.png?v=3') no-repeat center top;
+      /* Adding a version variable to force the mobile cache to break and load cleanly */
+      background: url('1781173637783.png?v=fresh') no-repeat center top;
       background-size: cover;
       background-attachment: scroll;
       display: flex;
@@ -35,7 +34,7 @@
       text-align: center;
     }
 
-    /* Square Portrait Image Frame */
+    /* Picture Profile Frame setup */
     .portrait-box {
       width: 160px;
       height: 160px;
@@ -57,14 +56,14 @@
       object-position: center 15% !important;
     }
 
-    /* Typography fixes with forced color overrides to beat mobile system light-mode overrides */
+    /* Title & Text styling protected against light mode overrides */
     .join-us {
       font-family: 'Cinzel', serif !important;
-      font-size: 1rem;
-      letter-spacing: 4px;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
       color: #ffffff !important;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
     }
 
@@ -72,9 +71,9 @@
       font-family: 'Cinzel', serif !important;
       font-weight: 700 !important;
       color: #ffffff !important;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       line-height: 1.2;
-      margin: 0 0 25px 0;
+      margin: 0 0 20px 0;
       letter-spacing: 2px;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
     }
@@ -92,34 +91,22 @@
 
     .guest-of-honor {
       font-family: 'Pinyon Script', cursive !important;
-      font-size: 4.5rem;
+      font-size: 4.8rem;
       color: #ffffff !important;
       margin: 5px 0;
       line-height: 1.1;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0px 0px 15px rgba(74, 18, 44, 0.9);
     }
 
-    .age-milestone {
-      font-family: 'Cinzel', serif !important;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      color: #ffffff !important;
-      text-transform: uppercase;
-      margin-top: 15px;
-      margin-bottom: 35px;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-    }
-
-    /* Semitransparent background panel for readability */
+    /* Event Details Box */
     .details-section {
       margin: 30px 0;
-      background: rgba(74, 18, 44, 0.45) !important;
+      background: rgba(74, 18, 44, 0.5) !important;
       padding: 20px 15px;
       border-radius: 12px;
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .details-item {
@@ -137,7 +124,7 @@
       color: #ffffff !important;
     }
 
-    /* Safe White RSVP Container Panel */
+    /* Fixed RSVP container box to stop light mode layout breaks */
     .rsvp-form-box {
       margin-top: 35px;
       padding: 25px 20px;
@@ -253,10 +240,10 @@
 
     @media (max-width: 500px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
       }
       .guest-of-honor {
-        font-size: 3.8rem;
+        font-size: 4rem;
       }
       .portrait-box {
         width: 140px;
@@ -269,25 +256,21 @@
 
   <div class="invitation-container">
     
-    <!-- Image Profile Container Frame -->
     <div class="portrait-box">
       <img src="IMG-20260611-WA0019.jpg" alt="Ma">
     </div>
 
-    <!-- Updated layout wording requested by user -->
     <div class="join-us">Join us in</div>
     <h1>CELEBRATING MA</h1>
     <div class="celebrating">As she turns</div>
     <div class="guest-of-honor">90</div>
 
-    <!-- Details Section with Marigold spelling fix -->
     <div class="details-section">
       <div class="details-item"><strong>Venue:</strong> Marigold Banquet Hall, Merebank</div>
       <div class="details-item"><strong>Date:</strong> 19th December 2026</div>
       <div class="details-item"><strong>Time:</strong> 15h00</div>
     </div>
 
-    <!-- RSVP Interactive Block -->
     <div class="rsvp-form-box">
       <form onsubmit="sendToWhatsApp(event)">
         
@@ -368,4 +351,3 @@
 
 </body>
 </html>
-
