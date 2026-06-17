@@ -1,353 +1,616 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Ma's 90th Birthday Invitation</title>
+
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;700&family=Pinyon+Script&display=swap');
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
     body {
+
       font-family: 'Montserrat', sans-serif;
+
       /* Adding a version variable to force the mobile cache to break and load cleanly */
-      background: url('1781173637783.png?v=fresh') no-repeat center top;
+
+      background: url('IMG-20260615-WA0036.jpg?v=fresh') no-repeat center top;
+
       background-size: cover;
+
       background-attachment: scroll;
+
       display: flex;
+
       justify-content: center;
+
       align-items: flex-start;
+
       min-height: 100vh;
+
       color: #ffffff !important;
+
     }
 
     .invitation-container {
+
       max-width: 500px;
+
       width: 100%;
+
       margin: 0 auto;
+
       padding: 40px 20px;
+
       text-align: center;
+
     }
 
     /* Picture Profile Frame setup */
+
     .portrait-box {
+
       width: 160px;
+
       height: 160px;
+
       margin: 0 auto 30px auto;
+
       border-radius: 12px;
+
       border: 3px solid #ffffff !important;
+
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
       overflow: hidden;
+
       display: block;
+
       position: relative;
+
     }
 
     .portrait-box img {
+
       width: 100% !important;
+
       height: 100% !important;
+
       min-width: 100% !important;
+
       min-height: 100% !important;
+
       object-fit: cover !important;
+
       object-position: center 15% !important;
+
     }
 
     /* Title & Text styling protected against light mode overrides */
+
     .join-us {
+
       font-family: 'Cinzel', serif !important;
+
       font-size: 1.1rem;
+
       letter-spacing: 3px;
+
       color: #ffffff !important;
+
       text-transform: uppercase;
+
       margin-bottom: 8px;
+
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+
     }
 
     h1 {
+
       font-family: 'Cinzel', serif !important;
+
       font-weight: 700 !important;
+
       color: #ffffff !important;
+
       font-size: 2.5rem;
+
       line-height: 1.2;
+
       margin: 0 0 20px 0;
+
       letter-spacing: 2px;
+
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+
     }
 
     .celebrating {
+
       font-family: 'Montserrat', sans-serif !important;
+
       font-size: 0.95rem;
+
       font-weight: 600;
+
       letter-spacing: 5px;
+
       color: #ffffff !important;
+
       text-transform: uppercase;
+
       margin-bottom: 5px;
+
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+
     }
 
     .guest-of-honor {
+
       font-family: 'Pinyon Script', cursive !important;
+
       font-size: 4.8rem;
+
       color: #ffffff !important;
+
       margin: 5px 0;
+
       line-height: 1.1;
+
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0px 0px 15px rgba(74, 18, 44, 0.9);
+
     }
 
     /* Event Details Box */
+
     .details-section {
+
       margin: 30px 0;
+
       background: rgba(74, 18, 44, 0.5) !important;
+
       padding: 20px 15px;
+
       border-radius: 12px;
+
       backdrop-filter: blur(5px);
+
       -webkit-backdrop-filter: blur(5px);
+
       border: 1px solid rgba(255, 255, 255, 0.15);
+
     }
 
     .details-item {
+
       margin: 12px 0;
+
       font-size: 0.95rem;
+
       font-weight: 500;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       color: #ffffff !important;
+
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
     }
 
     .details-item strong {
+
       font-weight: 700;
+
       color: #ffffff !important;
+
     }
 
     /* Fixed RSVP container box to stop light mode layout breaks */
+
     .rsvp-form-box {
+
       margin-top: 35px;
+
       padding: 25px 20px;
+
       border-radius: 16px;
+
       background: #ffffff !important;
+
       background-color: #ffffff !important;
+
       border: 1px solid #ffffff !important;
+
       text-align: left;
+
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
     }
 
     label {
+
       display: block;
+
       font-size: 0.8rem;
+
       font-weight: 700;
+
       margin-bottom: 8px;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       color: #4a122c !important;
+
     }
 
     .status-buttons {
+
       display: flex;
+
       gap: 10px;
+
       margin-bottom: 20px;
+
     }
 
     .status-btn {
+
       flex: 1;
+
       padding: 12px;
+
       border: 1.5px solid rgba(74, 18, 44, 0.3) !important;
+
       border-radius: 8px;
+
       background: #ffffff !important;
+
       background-color: #ffffff !important;
+
       cursor: pointer;
+
       font-weight: 700;
+
       font-size: 0.85rem;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
       transition: all 0.3s ease;
+
       text-align: center;
+
     }
 
     .status-btn.yes {
+
       color: #008a36 !important;
+
     }
 
     .status-btn.yes.active {
+
       background: #00cc52 !important;
+
       background-color: #00cc52 !important;
+
       color: #ffffff !important;
+
       border-color: #00cc52 !important;
+
       box-shadow: 0 4px 12px rgba(0,204,82,0.3);
+
     }
 
     .status-btn.no {
+
       color: #b81d24 !important;
+
     }
 
     .status-btn.no.active {
+
       background: #ff2e35 !important;
+
       background-color: #ff2e35 !important;
+
       color: #ffffff !important;
+
       border-color: #ff2e35 !important;
+
       box-shadow: 0 4px 12px rgba(255,46,53,0.3);
+
     }
 
     input[type="text"], select {
+
       width: 100%;
+
       padding: 12px;
+
       margin-bottom: 20px;
+
       border: 1px solid rgba(74, 18, 44, 0.3) !important;
+
       border-radius: 8px;
+
       font-family: 'Montserrat', sans-serif;
+
       font-size: 0.95rem;
+
       background: #ffffff !important;
+
       background-color: #ffffff !important;
+
       color: #4a122c !important;
+
     }
 
     .submit-btn {
+
       width: 100%;
+
       background: #4a122c !important;
+
       background-color: #4a122c !important;
+
       border: none !important;
+
       color: #ffffff !important;
+
       padding: 14px;
+
       font-size: 0.9rem;
+
       font-weight: 600;
+
       border-radius: 8px;
+
       cursor: pointer;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       box-shadow: 0 4px 12px rgba(74, 18, 44, 0.3);
+
       transition: all 0.2s;
+
     }
 
     .submit-btn:hover {
+
       background: #63193b !important;
+
       background-color: #63193b !important;
+
     }
 
     .footer-contact {
+
       margin-top: 40px;
+
       font-size: 0.9rem;
+
       font-weight: 700;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       color: #ffffff !important;
+
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+
       line-height: 1.6;
+
     }
 
     @media (max-width: 500px) {
+
       h1 {
+
         font-size: 2.1rem;
+
       }
+
       .guest-of-honor {
+
         font-size: 4rem;
+
       }
+
       .portrait-box {
+
         width: 140px;
+
         height: 140px;
+
       }
+
     }
+
   </style>
+
 </head>
+
 <body>
 
   <div class="invitation-container">
-    
-    <div class="portrait-box">
-      <img src="IMG-20260611-WA0019.jpg" alt="Ma">
-    </div>
 
-    <div class="join-us">Join us in</div>
-    <h1>CELEBRATING MA</h1>
-    <div class="celebrating">As she turns</div>
-    <div class="guest-of-honor">90</div>
+    
+
+    <div class="join-us">90 YEARS LOVED </div>
+
+    <h1>Please join us to celebrate Ma</h1>
+
+    <div class="celebrating">on her </div>
+
+    <div class="guest-of-honor">90th birthday</div>
 
     <div class="details-section">
-      <div class="details-item"><strong>Venue:</strong> Marigold Banquet Hall, Merebank</div>
+
+      <div class="details-item"><strong>Venue:</strong> Durban</div>
+
       <div class="details-item"><strong>Date:</strong> 19th December 2026</div>
+
       <div class="details-item"><strong>Time:</strong> 15h00</div>
+
     </div>
 
     <div class="rsvp-form-box">
+
       <form onsubmit="sendToWhatsApp(event)">
+
         
+
         <label>Will you attend?</label>
+
         <div class="status-buttons">
+
           <button type="button" class="status-btn yes" onclick="setAttendance('Yes')">✓ Attend</button>
+
           <button type="button" class="status-btn no" onclick="setAttendance('No')">✗ Decline</button>
+
         </div>
 
         <input type="hidden" id="attendance-value" required>
 
         <label for="name">Your Full Name</label>
+
         <input type="text" id="name" placeholder="Enter your name" required>
 
         <label for="attendees">Number of Attendees</label>
+
         <select id="attendees">
+
           <option value="1">1 Person</option>
+
           <option value="2">2 People</option>
+
           <option value="3">3 People</option>
+
           <option value="4">4 People</option>
-          <option value="5+">5+ People</option>
+
+          <option value="5">5 People</option>
+
+          <option value="6">6 People</option>
+
+          <option value="7+">7+ People</option>
+
         </select>
 
         <button type="submit" class="submit-btn">Submit RSVP via WhatsApp</button>
+
       </form>
+
     </div>
 
     <div class="footer-contact">
+
       RSVP: Joanna Govender<br>084 300 7610
+
     </div>
 
   </div>
 
   <script>
+
     function setAttendance(choice) {
+
       document.getElementById('attendance-value').value = choice;
+
       
+
       const yesBtn = document.querySelector('.status-btn.yes');
+
       const noBtn = document.querySelector('.status-btn.no');
+
       
+
       if (choice === 'Yes') {
+
         yesBtn.classList.add('active');
+
         noBtn.classList.remove('active');
+
       } else {
+
         noBtn.classList.add('active');
+
         yesBtn.classList.remove('active');
+
       }
+
     }
 
     function sendToWhatsApp(event) {
+
       event.preventDefault(); 
 
       const myPhoneNumber = "27843007610"; 
 
       const attendance = document.getElementById('attendance-value').value;
+
       const guestName = document.getElementById('name').value;
+
       const guestCount = document.getElementById('attendees').value;
 
       if (!attendance) {
+
         alert("Please select if you will be attending or not!");
+
         return;
+
       }
 
       let message = `*🎉 Birthday RSVP Update 🎉*\n\n`;
+
       message += `*Name:* ${guestName}\n`;
-      message += `*Attending:* ${attendance}\n`;
+
+      message += `*Number of attendees:* ${attendance}\n`;
+
       
+
       if (attendance === 'Yes') {
+
         message += `*Total Guests Coming:* ${guestCount}\n`;
+
       }
 
       const encodedMessage = encodeURIComponent(message);
+
       const whatsappURL = `https://api.whatsapp.com/send?phone=${myPhoneNumber}&text=${encodedMessage}`;
 
       window.open(whatsappURL, '_blank');
+
     }
+
   </script>
 
 </body>
+
 </html>
+
